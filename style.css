@@ -148,23 +148,27 @@ header {
     position: relative;
     z-index: 1;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.rem 10rem;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;    
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 1rem 10rem;
     font-size: 12px;
     line-height: 1.5;
     text-align: justify;
 }
-
-
 .work-image {
-    flex: 1;
-    text-align: right;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    /* flex: 1; */
+    /* text-align: center; */
+    margin-top: 1rem;
 }
-.work-image image{
-    width: 360px;
+.work-image img{
+    width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
 }
@@ -226,4 +230,13 @@ header {
     .works {
         grid-template-columns: 1fr;
     }
+
+    .work-description {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    /* .work-image {
+        text-align: center;
+    } */
 }
