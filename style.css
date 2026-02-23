@@ -1,0 +1,204 @@
+/* ===== Base ===== */
+html, body {
+    margin: 0;
+    /* background-color: #3b0c0c; */
+    font-family: sans-serif;
+    /* color: white; */
+    font-family: 'Libre Baskerville';
+}
+
+.main-bg {
+    background-color: #DBA507;
+}
+
+.about-bg {
+    background-color: #3b0c0c;
+}
+
+.work-bg{
+    background-color: #07485B;
+}
+
+/* ===== Background Image ===== */
+.bg {
+    position: fixed;
+    top: 0;
+    background-color: #DBA507;
+    left: 0;
+    width: 100%;
+    height: 125%;
+    background: url('bg.jpg') center / cover no-repeat;
+    z-index: 0;
+    transition: opacity 0.1s linear;
+}
+
+/* ===== Main Title ===== */
+.nameHeader {
+    position: relative;
+    z-index: 1;
+    color:#DBA507;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 6px;
+    text-align: center;
+    /* margin-top: 40px; */
+    font-size: 48px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* ===== Header Navigation ===== */
+header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 50px;
+    /* font-size: 16px; */
+}
+
+.header-link {
+    color: #0D6986;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 6px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.header-link:hover {
+    color: #DBA507;
+    transform: scale(1.05);
+}
+
+.nameHeader:hover {
+    color: #3b0c0c;
+    transform: scale(1.05);
+}
+
+/* ====== Work Section =======*/
+.works {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* flex-direction: column; */
+    gap: 40px;
+    padding: 60px 100px;
+}
+
+.work-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    /* padding-left: 40px; */
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Background image */
+.work-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5); /* darkens image for readability */
+    transition: transform 0.6s ease, filter 0.6s ease;
+    z-index: 0;
+}
+
+/* Text above image */
+.work-item h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.work-item:nth-child(1)::before {
+    background-image: url("caim.jpg");
+}
+
+.work-item:nth-child(2)::before {
+    background-image: url("necrovisage.jpg");
+}
+
+.work-item:nth-child(3)::before {
+    background-image: url("ecolalia.jpg");
+}
+
+.work-item:nth-child(4)::before {
+    background-image: url("quarto.jpg");
+}
+
+.work-item::before {
+    transition: transform 0.5s ease;
+}
+
+.work-item:hover::before {
+    transform: scale(1.05);
+    filter: brightness(0.75);
+}
+
+/* ===== About Section ===== */
+.about {
+    position: relative;
+    z-index: 1;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 100px;
+    gap: 80px;
+    margin-top: 0px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h2 {
+    font-size: 18px;
+}
+
+.about-text p {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    width: 360px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .about-image {
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: left;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+    }
+}
