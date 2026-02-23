@@ -144,6 +144,31 @@ header {
     filter: brightness(0.75);
 }
 
+.work-description {
+    position: relative;
+    z-index: 1;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.rem 10rem;
+    gap: 1rem;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+
+.work-image {
+    flex: 1;
+    text-align: right;
+}
+.work-image image{
+    width: 360px;
+    height: auto;
+    border-radius: 12px;
+}
+
 /* ===== About Section ===== */
 .about {
     position: relative;
