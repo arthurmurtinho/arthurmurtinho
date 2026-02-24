@@ -14,15 +14,20 @@
 <body>
 
      <!-- Main title -->
-    <header>
-        <a href="index.html" class="nameHeader" onclick="fadeOut(event)">Arthur Murtinho</a>
+    <header class="nameHeader">
+        <a href="index.html" onclick="fadeOut(event)">
+            <img src="name.png" alt="Arthur Murtinho">
+        </a>
+        <div class="gifWrapper">
+            <img src="compositor.gif" alt="compositor e dramaturgo">
+        </div>
     </header>
 
     <!-- Navigation -->
     <header>
         <a href="work.html" class="header-link" onclick="fadeOut(event)">Trabalhos/Works</a>
         <a href="about.html" class="header-link" onclick="fadeOut(event)">Sobre/About</a>
-        <a href="contact.html" class="header-link" onclick="fadeOut(event)">Contact/Contato</a>
+        <!-- <a href="contact.html" class="header-link" onclick="fadeOut(event)">Contact/Contato</a> -->
     </header>
 
     <!-- About Section -->
@@ -40,6 +45,15 @@
             <h2>Quarto dos Indesejados</h2>
         </a>
     </section>
+
+
+    <footer class="site-footer">
+        <p>
+            © 2026 Arthur Murtinho ·
+            <a href="mailto:arthurmurtinho@hotmail.com">Email</a> ·
+            <a href="https://www.instagram.com/arthur_murtinho/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
+    </footer>
 
     <!-- Fade Transition Script -->
     <script src="main.js"></script>

@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -17,19 +18,27 @@
     <div class="bg" id="bg"></div>
 
     <!-- Main title -->
-    <header>
-        <a href="index.html" class="nameHeader" onclick="fadeOut(event)">Arthur Murtinho</a>
+    <header class="nameHeader">
+        <a href="index.html" onclick="fadeOut(event)">
+            <img src="name.png" alt="Arthur Murtinho">
+        </a>
+        <div class="gifWrapper">
+            <img src="compositor.gif" alt="compositor e dramaturgo">
+        </div>
     </header>
+
 
     <!-- Header with clickable links -->
     <header>
         <a href="work.html" class="header-link" onclick="fadeOut(event)">Trabalhos/Works</a>
         <a href="about.html" class="header-link" onclick="fadeOut(event)">Sobre/About</a>
-        <a href="contact.html" class="header-link" onclick="fadeOut(event)">Contact/Contato</a>
+        <!-- <a href="contact.html" class="header-link" onclick="fadeOut(event)">Contact/Contato</a> -->
     </header>
 
     <script src="main.js"></script>
-
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script> -->
+    <!-- <script src="sketch.js"></script> -->
 </body>
+
 
 </html>
