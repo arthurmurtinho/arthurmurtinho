@@ -6,6 +6,7 @@ body {
     font-family: sans-serif;
     /* color: white; */
     font-family: 'Libre Baskerville';
+    /* font-style: italic; */
 }
 
 .main-bg {
@@ -27,6 +28,7 @@ body {
     background-color: #DBA507;
     left: 0;
     width: 100%;
+    transform: translateY(50px);
     height: 125%;
     background: url('bg.jpg') center / cover no-repeat;
     z-index: 0;
@@ -36,26 +38,19 @@ body {
 /* ===== Main Title ===== */
 .nameHeader {
     position: relative;
-    align-items: center;
+    align-items: flex-start;
+    max-height: 3rem;
+    display: flex;
     flex-direction: column;
     grid-column: 1 / -1;
-    /* z-index: 1;
-    color:#DBA507;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 6px;
-    text-align: center; */
-    /* font-size: 48px; */
-    /* text-decoration: none; */
+    background-color: rgba(255, 255, 255, 1);
     transition: transform 0.3s, color 0.3s;
 }
 
 .nameHeader img {
     height: auto;
     width: 15rem;
-    gap: 5rem;
-    padding: 5px 100px;
-    /* adjust size */
-    display: flex;
+    margin-top: -10px;
 }
 
 .nameHeader:hover {
@@ -64,14 +59,15 @@ body {
 }
 
 .gifWrapper {
-  width: auto;        /* set your desired visible width */
-  height: 30px;       /* or fixed height if needed
-  overflow: hidden;    /* THIS creates the crop */
+    /* or fixed height if needed */
+    overflow: hidden;
+    /*   THIS creates the crop */
 }
 
 .gifWrapper img {
-  transform: scale(0.9);   /* zoom amount */
-  transform-origin: center;
+    width: 13rem;
+    height: auto;
+    /* border-radius: 18px; */
 }
 
 /* ===== Header Navigation ===== */
@@ -90,7 +86,8 @@ header {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 6px;
     font-size: 18px;
-    text-decoration: none;
+    /* text-decoration: none; */
+    text-decoration: ;
     transition: transform 0.3s, color 0.3s;
 }
 
@@ -155,7 +152,7 @@ header {
 }
 
 .work-item:nth-child(3)::before {
-    background-image: url("ecolalia.jpg");
+    background-image: url("ecolalia.png");
 }
 
 .work-item:nth-child(4)::before {
