@@ -30,8 +30,20 @@ body {
     width: 100%;
     transform: translateY(50px);
     height: 125%;
-    background: url('bg.jpg') center / cover no-repeat;
+    background: url('bg/bg.jpg') center / cover no-repeat;
     z-index: 0;
+    transition: opacity 0.1s linear;
+}
+
+.generic-bg {
+    position: fixed;
+    top: 0;
+    background-color: #DBA507;
+    left: 0;
+    width: 100%;
+    height: 125%;
+    z-index: 0;
+    filter: brightness(0.33);
     transition: opacity 0.1s linear;
 }
 
@@ -178,19 +190,35 @@ header {
 }
 
 .work-item:nth-child(1)::before {
-    background-image: url("caim.jpg");
+    background-image: url("logos/caim.jpg");
 }
 
 .work-item:nth-child(2)::before {
-    background-image: url("necrovisage.jpg");
+    background-image: url("logos/necrovisage.jpg");
 }
 
 .work-item:nth-child(3)::before {
-    background-image: url("ecolalia.png");
+    background-image: url("logos/ecolalia.png");
 }
 
 .work-item:nth-child(4)::before {
-    background-image: url("quarto.jpg");
+    background-image: url("logos/quarto.jpg");
+}
+
+.work-item:nth-child(5)::before {
+    background-image: url("bagatelas/BAGATELAS0004.jpg");
+}
+
+.work-item:nth-child(6)::before {
+    background-image: url("logos/sons_logo.png");
+}
+
+.work-item:nth-child(7)::before {
+    background-image: url("logos/ultimas_logo.jpg");
+}
+
+.work-item:nth-child(8)::before {
+    background-image: url("passos/passos\ \(3\).jpg");
 }
 
 .work-item::before {
