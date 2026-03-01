@@ -28,8 +28,8 @@ body {
     background-color: #DBA507;
     left: 0;
     width: 100%;
-    transform: translateY(50px);
-    height: 125%;
+    /* transform: translateY(50px); */
+    height: 140%;
     background: url('bg/bg.jpg') center / cover no-repeat;
     z-index: 0;
     transition: opacity 0.1s linear;
@@ -55,7 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     grid-column: 1 / -1;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.95);
     transition: transform 0.3s, color 0.3s;
 }
 
