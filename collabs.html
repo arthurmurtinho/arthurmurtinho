@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="about-bg" lang="en">
+<html class="collab-bg" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -39,41 +39,36 @@
     </header>
 
     <!-- About Section -->
-    <section class="about">
-        <div class="about-text">
-            <h2>Sobre/About</h2>
-            <p id="bio"></p>
-        </div>
-
-        <div class="about-image">
-            <img src="logos/Foto_quad.jpg" alt="Arthur Murtinho">
-        </div>
-
+    <section class="collabs">
+        <a href="collab1.html" class="collab-item">
+            <h2>próxima à fronteira</h2>
+        </a>
+        <a href="collab2.html" class="collab-item">
+            <h2>SopaÓpera</h2>
+        </a>
+        <a href="collab3.html" class="collab-item">
+            <h2>Dom Quixote</h2>
+        </a>
+        <a href="collab4.html" class="collab-item">
+            <h2>Cabaré Cybernético</h2>
+        </a>
+        <a href="collab5.html" class="collab-item">
+            <h2>como a palavra amor sai naturalmente das nossas bocas</h2>
+        </a>
+        <a href="collab6.html" class="collab-item">
+            <h2>Peça-Sonho</h2>
+        </a>
+        <a href="collab7.html" class="collab-item">
+            <h2>Ophelia is a-live</h2>
+        </a>
     </section>
     <div id="footer-placeholder"></div>
-    <!-- <footer class="site-footer">
-        <p>
-            © 2026 Arthur Murtinho ·
-            <a href="mailto:arthurmurtinho@hotmail.com">Email</a> ·
-            <a href="https://www.instagram.com/arthur_murtinho/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            .
-            <a href="https://www.youtube.com/channel/UCvu-cTd11kw5isvckTjgLdg" target="_blank"
-                rel="noopener noreferrer"> Youtube</a>
-        </p>
-    </footer> -->
+
 
     <!-- Fade Transition Script -->
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <script src="sketch.js"></script>
-    <script>
-        fetch("minibio.txt")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("bio").textContent = data;
-            })
-            .catch(error => console.error("Error loading bio:", error));
-    </script>
     <script>
         loadHTML('footer-placeholder', 'footer.html');
     </script>

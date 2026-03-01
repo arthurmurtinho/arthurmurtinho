@@ -3,7 +3,6 @@ function fadeOut(e) {
     const link = e.currentTarget.href;
     document.body.style.transition = "opacity 0.3s ease";
     document.body.style.opacity = 0;  // fade out
-
     setTimeout(() => {
         window.location = link;       // go to new page after fade
     }, 300); // matches transition duration
@@ -19,6 +18,8 @@ window.onload = () => {
 };
 
 const workImages = document.querySelectorAll('.work-image img');
+const collabImages = document.querySelectorAll('.collab-image img');
+
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -30,13 +31,19 @@ const observer = new IntersectionObserver((entries, obs) => {
 }, {
     threshold: 0.1
 });
+
 workImages.forEach((img, i) => {
     img.style.transitionDelay = `${i * 0.05}s`; // 0.2s between each
     observer.observe(img);
 });
 
+collabImages.forEach((img, i) => {
+    img.style.transitionDelay = `${i * 0.05}s`; // 0.2s between each
+    observer.observe(img);
+});
 
 const textSections = document.querySelectorAll('.work-description > div');
+const textSections2 = document.querySelectorAll('.collab-description > div');
 const textObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -47,7 +54,7 @@ const textObserver = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.1 });
 
 textSections.forEach(div => textObserver.observe(div));
-
+textSections2.forEach(div => textObserver.observe(div));
 // workImages.forEach(img => observer.observe(img));
 
 
@@ -58,3 +65,15 @@ textSections.forEach(div => textObserver.observe(div));
 //     const opacity = 1 - scrollY / maxScroll;
 //     bg.style.opacity = opacity < 0 ? 0 : opacity;
 // });
+
+function loadHTML(targetId, filePath) {
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById(targetId).innerHTML = data;
+        })
+        .catch(err => console.error(err));
+}

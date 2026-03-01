@@ -37,12 +37,17 @@
         <a href="about.html" class="header-link" onclick="fadeOut(event)">
             <img src="logos/Sobre_logo.png" alt="Sobre_logo">
         </a>
-        <!-- <a href="contact.html" class="header-link" onclick="fadeOut(event)">Contact/Contato</a> -->
+        <a href="collabs.html" class="header-link" onclick="fadeOut(event)">
+            <img src="logos/collabs_logo.png" alt="Sobre_logo">
+        </a>
     </header>
-
+    <div id="footer-placeholder"></div>
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <script src="sketch.js"></script>
+    <script>
+        loadHTML('footer-placeholder', 'footer.html');
+    </script>
 </body>
 
 

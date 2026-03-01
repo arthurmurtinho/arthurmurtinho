@@ -33,7 +33,9 @@
         <a href="about.html" class="header-link" onclick="fadeOut(event)">
             <img src="logos/Sobre_logo.png" alt="Sobre_logo">
         </a>
-        <!-- <a href="contact.html" class="header-link" onclick="fadeOut(event)">Contact/Contato</a> -->
+        <a href="collabs.html" class="header-link" onclick="fadeOut(event)">
+            <img src="logos/collabs_logo.png" alt="Sobre_logo">
+        </a>
     </header>
 
     <!-- About Section -->
@@ -64,8 +66,8 @@
         </a>
     </section>
 
-
-    <footer class="site-footer">
+    <div id="footer-placeholder"></div>
+    <!-- <footer class="site-footer">
         <p>
             © 2026 Arthur Murtinho ·
             <a href="mailto:arthurmurtinho@hotmail.com">Email</a> ·
@@ -74,12 +76,15 @@
             <a href="https://www.youtube.com/channel/UCvu-cTd11kw5isvckTjgLdg" target="_blank"
                 rel="noopener noreferrer"> Youtube</a>
         </p>
-    </footer>
+    </footer> -->
 
     <!-- Fade Transition Script -->
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <script src="sketch.js"></script>
+    <script>
+        loadHTML('footer-placeholder', 'footer.html');
+    </script>
 </body>
 
 </html>

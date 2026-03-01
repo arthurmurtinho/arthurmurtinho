@@ -10,22 +10,27 @@ body {
 }
 
 .main-bg {
-    background-color: #DBA507;
+    /* background-color: #DBA507; */
+    background-color: #071E5B;
 }
 
 .about-bg {
-    background-color: #3b0c0c;
+    /* background-color: #3b0c0c; */
+    background-color: #075B44;
 }
 
 .work-bg {
     background-color: #07485B;
 }
 
+.collab-bg {
+    background-color: #071E5B;
+}
+
 /* ===== Background Image ===== */
 .bg {
     position: fixed;
     top: 0;
-    background-color: #DBA507;
     left: 0;
     width: 100%;
     /* transform: translateY(50px); */
@@ -148,6 +153,147 @@ header {
     /* background-color: #DBA507; */
     transform: scale(1.05);
 }
+
+/* ========Collab Section=====*/
+.collabs {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* flex-direction: column; */
+    gap: 20px;
+    padding: 6px 100px;
+}
+
+.collab-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    /* padding-left: 40px; */
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Background image */
+.collab-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    /* darkens image for readability */
+    transition: transform 0.6s ease, filter 0.6s ease;
+    z-index: 0;
+}
+
+.collab-item:hover::before {
+    transform: scale(1.05);
+    filter: brightness(0.75);
+}
+
+/* Text above image */
+.collab-item h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.collab-item:nth-child(1)::before {
+    background-image: url("logos/fronteira_logo.jpg");
+}
+
+.collab-item:nth-child(2)::before {
+    background-image: url("logos/sopa_logo.jpg");
+}
+
+.collab-item:nth-child(3)::before {
+    background-image: url("logos/quixote_logo.jpg");
+}
+
+.collab-item:nth-child(4)::before {
+    background-image: url("logos/cabare_logo.png");
+}
+
+.collab-item:nth-child(5)::before {
+    background-image: url("logos/amor_logo.png");
+}
+
+.collab-item:nth-child(6)::before {
+    background-image: url("logos/sonho_logo.jpg");
+}
+
+.collab-item:nth-child(7)::before {
+    background-image: url("logos/ophelia_logo.jpg");
+}
+
+
+.collab-description {
+    position: relative;
+    z-index: 1;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 1rem 10rem;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.collab-description>div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.collab-description>div.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.collab-image {
+    grid-column: 1 / -1;
+    /* display: flex; */
+    
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.collab-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.collab-image img:last-child:nth-child(odd) {
+    grid-column: 1 / -1; /* span full width */
+    justify-self: center; /* center the item */
+}
+
+.collab-image img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 
 
@@ -364,6 +510,19 @@ header {
     .work-image {
         grid-template-columns: 1fr; /* single column on small screens */
     }
+
+    .collabs {
+        grid-template-columns: 1fr;
+    }
+
+    .collab-description {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    .collab-image {
+        grid-template-columns: 1fr; /* single column on small screens */
+    }
 }
 
 .site-footer {
@@ -372,6 +531,7 @@ header {
     color: #777;
     padding: 15px 0;
     margin-top: 1rem;
+    z-index: 1;
 }
 
 .site-footer a {
