@@ -58,6 +58,7 @@ body {
     align-items: flex-start;
     max-height: 3rem;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     grid-column: 1 / -1;
     background-color: rgba(255, 255, 255, 0.95);
@@ -77,9 +78,11 @@ body {
 
 #p5-bg {
     position: absolute;
-    inset: 0;            /* shorthand for top:0; left:0; right:0; bottom:0 */
+    inset: 0;
+    /* shorthand for top:0; left:0; right:0; bottom:0 */
     z-index: 0;
-    pointer-events: none; /* allows clicks to pass through */
+    pointer-events: none;
+    /* allows clicks to pass through */
 }
 
 .gifWrapper {
@@ -107,7 +110,8 @@ body {
 .video-wrapper iframe {
     width: 100%;
     max-width: 800px;
-    aspect-ratio: 16 / 9;   /* modern responsive method */
+    aspect-ratio: 16 / 9;
+    /* modern responsive method */
     border-radius: 12px;
 }
 
@@ -132,10 +136,17 @@ header {
     position: relative;
     z-index: 1;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 20px 50px;
     /* font-size: 16px; */
+}
+
+header img {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
 }
 
 .header-link {
@@ -170,11 +181,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 220px;
+    /* height: 220px; */
+    min-height: 220px;
+    height: auto;
+    max-width: 100%;
+    min-width: 0;
     /* padding-left: 40px; */
     text-decoration: none;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 12px;
 }
 
@@ -200,7 +215,11 @@ header {
 .collab-item h2 {
     position: relative;
     z-index: 1;
-    font-size: 32px;
+    /* font-size: 32px; */
+    font-size: clamp(8px,3vw,32px);
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     letter-spacing: 1px;
 }
 
@@ -262,7 +281,7 @@ header {
 .collab-image {
     grid-column: 1 / -1;
     /* display: flex; */
-    
+
     /* flex-direction: column; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -285,8 +304,10 @@ header {
 }
 
 .collab-image img:last-child:nth-child(odd) {
-    grid-column: 1 / -1; /* span full width */
-    justify-self: center; /* center the item */
+    grid-column: 1 / -1;
+    /* span full width */
+    justify-self: center;
+    /* center the item */
 }
 
 .collab-image img.visible {
@@ -313,11 +334,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 220px;
+    /* height: 220px; */
+    min-height: 220px;
+    height: auto;
+    max-width: 100%;
+    min-width: 0;
     /* padding-left: 40px; */
     text-decoration: none;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 12px;
 }
 
@@ -338,7 +363,11 @@ header {
 .work-item h2 {
     position: relative;
     z-index: 1;
-    font-size: 32px;
+    /* font-size: 32px; */
+    font-size: clamp(8px,3vw,32px);
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     letter-spacing: 1px;
 }
 
@@ -412,7 +441,7 @@ header {
 .work-image {
     grid-column: 1 / -1;
     /* display: flex; */
-    
+
     /* flex-direction: column; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -435,8 +464,10 @@ header {
 }
 
 .work-image img:last-child:nth-child(odd) {
-    grid-column: 1 / -1; /* span full width */
-    justify-self: center; /* center the item */
+    grid-column: 1 / -1;
+    /* span full width */
+    justify-self: center;
+    /* center the item */
 }
 
 .work-image img.visible {
@@ -495,7 +526,8 @@ header {
     }
 
     .about-text p {
-        text-align: left;
+        /* text-align: left; */
+        text-align: justify;
     }
 
     .works {
@@ -508,7 +540,8 @@ header {
     }
 
     .work-image {
-        grid-template-columns: 1fr; /* single column on small screens */
+        grid-template-columns: 1fr;
+        /* single column on small screens */
     }
 
     .collabs {
@@ -521,9 +554,16 @@ header {
     }
 
     .collab-image {
-        grid-template-columns: 1fr; /* single column on small screens */
+        grid-template-columns: 1fr;
+        /* single column on small screens */
     }
 }
+
+/* @media (max-width: 768px) {
+  header img {
+    max-width: 80px;
+  }
+} */
 
 .site-footer {
     text-align: center;
