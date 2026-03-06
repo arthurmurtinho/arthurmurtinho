@@ -3,32 +3,30 @@ const pageContent = document.getElementById("page-content");
 
 // Fade out function
 function fadeOut(e) {
-    // e.preventDefault();
     const link = e.currentTarget.href;
     if (!link || e.currentTarget.target === "_blank") return;
     e.preventDefault();
-    
+
     const overlay = document.createElement("div");
     overlay.className = "fade-overlay";
     document.body.appendChild(overlay);
-    // if (bg) bg.style.opacity = 0;
-    // if (pageContent) pageContent.style.opacity = 0;
     requestAnimationFrame(() => {
         overlay.style.opacity = 1;
         if (pageContent) pageContent.style.opacity = 0;
         if (bg) bg.style.opacity = 0;
-    });  
+    });
     setTimeout(() => {
         window.location = link;
-    }, 300);
+    }, 600);
 }
 
 // Fade in on page load
 window.addEventListener("load", () => {
-    // if (bg) bg.style.opacity = 0;
-    // if (pageContent) pageContent.style.opacity = 0;
-
+    const overlay = document.createElement("div");
+    overlay.className = "fade-overlay";
+    document.body.appendChild(overlay);
     requestAnimationFrame(() => {
+        overlay.style.opacity = 0;
         if (bg) bg.style.opacity = 1;
         if (pageContent) pageContent.style.opacity = 1;
     });

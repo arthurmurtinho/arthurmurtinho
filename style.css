@@ -12,6 +12,7 @@ body {
 
 .main-bg .bg {
     background: url("bg/bg.jpg") center / cover no-repeat;
+    filter: brightness(0.75) contrast(1.2);
 }
 
 .about-bg .bg {
@@ -35,7 +36,7 @@ body {
     /* background: url('bg/bg.jpg') center / cover no-repeat; */
     z-index: 0;
     inset: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
     opacity: 0;
 }
 
@@ -53,7 +54,7 @@ body {
 
 .page-content {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
 }
 
 .fade-overlay {
@@ -63,7 +64,7 @@ body {
     z-index: 0;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
 }
 
 /* ===== Main Title ===== */
@@ -579,20 +580,26 @@ header img {
   }
 } */
 
+
+.main-wrapper {
+    min-height: 60vh;
+}
+
 .site-footer {
     text-align: center;
+    position: relative;
     font-size: 0.85rem;
-    color: #777;
-    padding: 15px 0;
+    color: #ffffff;
+    /* padding: 15px 0; */
     margin-top: 1rem;
-    z-index: 1;
+    z-index: 10;
 }
 
 .site-footer a {
-    color: #777;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .site-footer a:hover {
-    color: #000;
+    color: #DBA507;
 }
