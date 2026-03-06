@@ -1,21 +1,43 @@
+const bg = document.getElementById("bg");
+const pageContent = document.getElementById("page-content");
+
+// Fade out function
 function fadeOut(e) {
-    e.preventDefault();               // stop default link jump
+    // e.preventDefault();
     const link = e.currentTarget.href;
-    document.body.style.transition = "opacity 0.3s ease";
-    document.body.style.opacity = 0;  // fade out
+    if (!link || e.currentTarget.target === "_blank") return;
+    e.preventDefault();
+    
+    const overlay = document.createElement("div");
+    overlay.className = "fade-overlay";
+    document.body.appendChild(overlay);
+    // if (bg) bg.style.opacity = 0;
+    // if (pageContent) pageContent.style.opacity = 0;
+    requestAnimationFrame(() => {
+        overlay.style.opacity = 1;
+        if (pageContent) pageContent.style.opacity = 0;
+        if (bg) bg.style.opacity = 0;
+    });  
     setTimeout(() => {
-        window.location = link;       // go to new page after fade
-    }, 300); // matches transition duration
+        window.location = link;
+    }, 300);
 }
 
-// Optional: fade in on page load
-window.onload = () => {
-    document.body.style.opacity = 0;
-    document.body.style.transition = "opacity 0.3s ease";
-    setTimeout(() => {
-        document.body.style.opacity = 1;
-    }, 10);
-};
+// Fade in on page load
+window.addEventListener("load", () => {
+    // if (bg) bg.style.opacity = 0;
+    // if (pageContent) pageContent.style.opacity = 0;
+
+    requestAnimationFrame(() => {
+        if (bg) bg.style.opacity = 1;
+        if (pageContent) pageContent.style.opacity = 1;
+    });
+});
+
+// Automatically attach fade to all links
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", fadeOut);
+});
 
 const workImages = document.querySelectorAll('.work-image img');
 const collabImages = document.querySelectorAll('.collab-image img');

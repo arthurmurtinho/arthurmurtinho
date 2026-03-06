@@ -9,35 +9,34 @@ body {
     /* font-style: italic; */
 }
 
-.main-bg {
-    /* background-color: #DBA507; */
-    background-color: #071E5B;
+
+.main-bg .bg {
+    background: url("bg/bg.jpg") center / cover no-repeat;
 }
 
-.about-bg {
-    /* background-color: #3b0c0c; */
+.about-bg .bg {
     background-color: #075B44;
 }
 
-.work-bg {
+.work-bg .bg {
     background-color: #07485B;
 }
 
-.collab-bg {
+.collab-bg .bg {
     background-color: #071E5B;
 }
-
 /* ===== Background Image ===== */
 .bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    /* transform: translateY(50px); */
     height: 140%;
-    background: url('bg/bg.jpg') center / cover no-repeat;
+    /* background: url('bg/bg.jpg') center / cover no-repeat; */
     z-index: 0;
-    transition: opacity 0.1s linear;
+    inset: 0;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
 }
 
 .generic-bg {
@@ -50,6 +49,21 @@ body {
     z-index: 0;
     filter: brightness(0.33);
     transition: opacity 0.1s linear;
+}
+
+.page-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #071E5B; /* or whatever your page bg color is */
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* ===== Main Title ===== */
